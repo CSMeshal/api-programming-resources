@@ -9,7 +9,7 @@ export default function authenticate(request: FastifyRequest, reply: FastifyRepl
         console.log(request.headers);
         const value = jwt.verify(token || "decoy", secret);
         next();
-    } catch (err); {
+    } catch (err) {
         reply.send(err);
     }
 };
